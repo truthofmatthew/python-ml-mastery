@@ -1,102 +1,88 @@
 # Day 2: Basic Python Syntax and Data Types
 
-Python is a high-level, interpreted programming language with a simple syntax that emphasizes readability and reduces the cost of program maintenance. It supports multiple programming paradigms, including structured, object-oriented, and functional programming. Python is often described as a "batteries included" language due to its comprehensive standard library.
+Python is a high-level, interpreted programming language with a simple syntax that emphasizes readability and reduces the cost of program maintenance. Today, we will explore Python's syntax, standard data types, and variables.
 
 ## Task 1: Python's Syntax for Comments, Variables Declaration, and Basic Operations
 
-### Comments
-In Python, comments are lines that exist in computer programs that are ignored by compilers and interpreters. Including comments in programs makes code more readable for humans as it provides some information or explanation about what each part of a program is doing. In general, it is a good idea to write comments while you are writing or updating a program as it is easy to forget your thought process later on, and comments written later may be less useful in the long term.
-
-In Python, we use the hash (#) symbol to start writing a comment.
+Python uses the `#` symbol to start a comment. Comments are lines that exist in computer programs that are ignored by compilers and interpreters. Including comments in programs makes code more readable for humans as it provides some information or explanation about what each part of a program is doing.
 
 ```python
 # This is a comment
-print("Hello, World!")
 ```
 
-### Variables Declaration
-Variables are containers for storing data values. Unlike other programming languages, Python has no command for declaring a variable. A variable is created the moment you first assign a value to it.
+In Python, variables are created when you assign a value to it. Python has no command for declaring a variable. A variable is created the moment you first assign a value to it.
 
 ```python
 x = 5
-y = "John"
-print(x)
-print(y)
+y = "Hello, World!"
 ```
 
-### Basic Operations
 Python supports the usual mathematical operations:
 
 ```python
 # Addition
-print(5 + 3)  # Outputs: 8
+x = 5 + 2  # x will be 7
 
 # Subtraction
-print(5 - 3)  # Outputs: 2
+x = 5 - 2  # x will be 3
 
 # Multiplication
-print(5 * 3)  # Outputs: 15
+x = 5 * 2  # x will be 10
 
 # Division
-print(5 / 3)  # Outputs: 1.6666666666666667
-
-# Modulus
-print(5 % 3)  # Outputs: 2
-
-# Exponentiation
-print(5 ** 3)  # Outputs: 125
-
-# Floor division
-print(5 // 3)  # Outputs: 1
+x = 5 / 2  # x will be 2.5
 ```
 
 ## Task 2: Different Data Types
 
-Python has five standard data types:
-
-- Numbers
-- String
-- List
-- Tuple
-- Dictionary
+In Python, every value has a datatype. Everything is an object in Python programming, and data types are classes and variables are instance (object) of these classes. Python has various standard data types that are used to define the operations possible on them and the storage method for each of them.
 
 ```python
-# Numbers
+# int
 x = 5
-print(x, type(x))
+print(type(x))  # <class 'int'>
 
-# String
+# float
+x = 5.0
+print(type(x))  # <class 'float'>
+
+# str
 x = "Hello, World!"
-print(x, type(x))
+print(type(x))  # <class 'str'>
 
-# List
-x = ["apple", "banana", "cherry"]
-print(x, type(x))
-
-# Tuple
-x = ("apple", "banana", "cherry")
-print(x, type(x))
-
-# Dictionary
-x = {"name": "John", "age": 36}
-print(x, type(x))
+# bool
+x = True
+print(type(x))  # <class 'bool'>
 ```
 
 ## Task 3: Type Conversion
 
-You can convert from one type to another with the `int()`, `float()`, and `str()` functions:
+Python defines type conversion functions to directly convert one data type to another which is useful in day to day and competitive programming.
 
 ```python
-# Convert from one type to another:
+# int to float
+x = 5
+print(float(x))  # 5.0
 
-x = 5   # int
-print(x, type(x))
+# float to int
+x = 5.0
+print(int(x))  # 5
 
-y = str(x)
-print(y, type(y))
+# int to str
+x = 5
+print(str(x))  # '5'
 
-z = float(x)
-print(z, type(z))
+# str to int
+x = "5"
+print(int(x))  # 5
 ```
 
-Note: Type conversion can lead to data loss, and some conversions are not allowed (e.g., from a string to an integer if the string does not represent a number).
+However, not all conversions are possible:
+
+```python
+# str to int
+x = "Hello, World!"
+print(int(x))  # ValueError: invalid literal for int() with base 10: 'Hello, World!'
+```
+
+In this case, Python is unable to convert the string "Hello, World!" to an integer, and raises a `ValueError`.
