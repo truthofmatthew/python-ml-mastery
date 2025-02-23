@@ -69,3 +69,54 @@ print(list(map(ternary, numbers)))
 5️⃣ **Returns the new value**  
 
 ---
+
+The **correct flow** is:
+
+1️⃣ **`lambda x:`** → The function receives `x` as input.  
+2️⃣ **`x % 2 != 0`** → Checks if `x` is odd.  
+3️⃣ **Condition Check:**
+   - **If `True` (x is odd)** → Multiply `x` by `3`.  
+   - **If `False` (x is even)** → Keep `x` unchanged.  
+4️⃣ **Return the final result.**
+
+---
+
+### **Correct Execution Flow:**
+```
+1- lambda x:  # Takes x as input
+2- Check condition → Is x % 2 != 0?
+    ├── Yes → Compute x * 3
+    ├── No  → Keep x unchanged
+3- Return the result
+```
+
+### **Example Walkthrough (`x = 3`):**
+1. `x = 3`
+2. Check: `3 % 2 != 0` → **True** (3 is odd)
+3. Since condition is **True**, return `3 * 3 = 9`.
+
+### **Example Walkthrough (`x = 4`):**
+1. `x = 4`
+2. Check: `4 % 2 != 0` → **False** (4 is even)
+3. Since condition is **False**, return `4` unchanged.
+
+---
+
+### **Incorrect Understanding (Fix)**
+Your order was:
+```
+1- lambda x:
+2- if x % 2 != 0 else x
+3- then it puts everything in x * 3
+```
+🚫 **This is wrong** because the condition check (`if x % 2 != 0 else x`) doesn't come first in execution.
+
+✅ **Correct order:**
+```
+1- lambda x:
+2- Check condition (x % 2 != 0)
+3- If True → x * 3
+4- If False → x unchanged
+5- Return result
+```
+
